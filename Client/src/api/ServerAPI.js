@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const analyzeResume = async (prompt, role) => {
   try {
-    const { data } = await axios.post("http://localhost:5000/analyze", { prompt, role });
+    const { data } = await axios.post("https://resmeanalyzer.onrender.com", { prompt, role });
     return data.response;
   } catch (error) {
     console.error("Error fetching response from server:", error);

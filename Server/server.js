@@ -4,18 +4,14 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-
+app.use({})
 // Configure CORS to allow requests from specific origins
 app.use(
   cors({
     origin: [
       "https://resume-scanner1.netlify.app", // Allow your Netlify frontend
       "http://localhost:3000",              // Allow localhost for development
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
-    credentials: true, // Include credentials if necessary (e.g., cookies)
-  })
-);
+    ])}));
 
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());

@@ -4,7 +4,6 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use({})
 // Configure CORS to allow requests from specific origins
 app.use(
   cors({

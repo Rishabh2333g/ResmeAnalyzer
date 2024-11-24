@@ -9,9 +9,11 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://resume-scanner1.netlify.app/", // Frontend hosted on Netlify
-      "http://localhost:3000",                 // Frontend for local development
+      "https://https://resume-scanner1.netlify.app/", // Update with the correct Netlify domain
+      "http://localhost:3000",              // For local development
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    credentials: true,                       // Allow cookies if necessary
   })
 );
 

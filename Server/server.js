@@ -10,9 +10,10 @@ app.use(
   cors({
     origin: [
       "https://resume-scanner1.netlify.app", // Allow your Netlify frontend
-      "http://localhost:3000",              // Allow localhost for development
-    ])}));
-
+      "http://localhost:3000"
+    ],
+  })
+);
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());
 

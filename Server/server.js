@@ -1,27 +1,28 @@
-require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
-// Configure CORS to allow requests only from specific origins
+// Configure CORS to allow requests from specific origins
 app.use(
   cors({
     origin: [
-      "https://https://resume-scanner1.netlify.app/", // Update with the correct Netlify domain
-      "http://localhost:3000",              // For local development
+      "https://resume-scanner1.netlify.app", // Allow your Netlify frontend
+      "http://localhost:3000",              // Allow localhost for development
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    credentials: true,                       // Allow cookies if necessary
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
+    credentials: true, // Include credentials if necessary (e.g., cookies)
   })
 );
 
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());
 
-// POST /analyze - directly handled within the route
+// Your existing routes
 const { analyzeResume } = require("./services/groqService");
+
 app.post("/analyze", async (req, res) => {
   const { prompt, role } = req.body;
 

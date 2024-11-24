@@ -1,12 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "https://resmeanalyzer.onrender.com", // Backend URL
-});
-
 export const analyzeResume = async (prompt, role) => {
   try {
-    const response = await API.post("/analyze", { prompt, role });
+    const response = await API.post("https://resmeanalyzer.onrender.com/analyze", { prompt, role });
     return response.data;
   } catch (error) {
     console.error("Error fetching response from server:", error);

@@ -5,8 +5,17 @@ const cors = require("cors");
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// Configure CORS to allow requests only from specific origins
+app.use(
+  cors({
+    origin: [
+      "https://resume-analyzer123.netlify.app", // Frontend hosted on Netlify
+      "http://localhost:3000",                 // Frontend for local development
+    ],
+  })
+);
+
+// Middleware to parse JSON request bodies
 app.use(bodyParser.json());
 
 // POST /analyze - directly handled within the route

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 // import PromptInput from "./components/PromptInput";
-import { ResponseDisplay, PDFTextExtractor, PromptInput, RoleInput } from "./components/Analyzer";
-// import RoleInput from "./components/RoleInput";
-// import ResponseDisplay from "./components/ResponseDisplay";
-// import PDFTextExtractor from "./components/PDFTextExtractor";
+import { ResponseDisplay, PDFTextExtractor, RoleInput } from "./components/Analyzer";
 import { analyzeResume } from "./api/ServerAPI";
 import { generatePDFReport } from "./utils/reportGenerator";
 
@@ -11,8 +8,8 @@ function App() {
   const [prompt, setPrompt] = useState("");
   const [role, setRole] = useState("");
   const [response, setResponse] = useState({});
-  const [username, setUsername] = useState("");
-  const [contactNo, setContactNo] = useState("");
+  const [username] = useState("");
+  const [contactNo] = useState("");
   const [darkMode, setDarkMode] = useState(false); // Dark mode state
 
   // Toggle Dark Mode

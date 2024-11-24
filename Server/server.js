@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "https://resume-scanner1.netlify.app", // Allow your Netlify frontend
-      "http://localhost:3000"
+      "http://localhost:3000",
     ],
   })
 );
